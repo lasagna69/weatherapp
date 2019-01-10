@@ -1,7 +1,8 @@
-let request = require('request');
+const request = require('request');
+const argv = require('yargs').argv;
 
 let apiKey = '1e633184aa243831894d8d884c77daee';
-let city = 'Cebu city';
+let city = argv.c || 'Cebu city';
 let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
 
 request(url, function (err, response, body) {
